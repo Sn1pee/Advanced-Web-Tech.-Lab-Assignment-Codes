@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi Technological University</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f7f5ef;
+            color: #2f332d;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 7%;
+            background: rgba(250, 248, 241, 0.95);
+            border-bottom: 1px solid #dedbd1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #52664f;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-text h2 {
+            color: #2f3b2f;
+            font-size: 18px;
+        }
+
+        .logo-text p {
+            color: #7b7d76;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #4f514b;
+            text-decoration: none;
+            margin-left: 26px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #52664f;
+        }
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 60px;
+            background: #ece9df;
+        }
+
+        .hero-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #bfc6ba;
+            border-radius: 50px;
+            color: #52664f;
+            background: #f7f5ef;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .hero-content h1 {
+            font-size: 65px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: #30372f;
+        }
+
+        .hero-content h1 span {
+            color: #6e8069;
+        }
+
+        .hero-content p {
+            color: #666960;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #52664f;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #657861;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            color: #4a5548;
+            border: 1px solid #92998e;
+        }
+
+        .btn-secondary:hover {
+            background: #dddcd4;
+        }
+
+        .hero-card {
+            padding: 35px;
+            border-radius: 18px;
+            background: #faf8f2;
+            border: 1px solid #d8d5ca;
+            box-shadow: 0 15px 35px rgba(65, 70, 60, 0.12);
+            transition: 0.3s;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-card h3 {
+            color: #52664f;
+            margin-bottom: 25px;
+            font-size: 21px;
+        }
+
+        .stat {
+            padding: 18px 0;
+            border-bottom: 1px solid #dedbd1;
+        }
+
+        .stat:last-child {
+            border-bottom: none;
+        }
+
+        .stat h2 {
+            font-size: 28px;
+            color: #343a32;
+        }
+
+        .stat p {
+            color: #85867f;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-label {
+            color: #657861;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #30362f;
+        }
+
+        .section-description {
+            max-width: 700px;
+            color: #6d7069;
+            line-height: 1.7;
+            margin-bottom: 50px;
+        }
+
+        #about {
+            background: #faf9f5;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .about-card {
+            padding: 30px;
+            border-radius: 14px;
+            background: #f0eee7;
+            border-top: 4px solid #788b73;
+            transition: 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(60, 70, 58, 0.1);
+        }
+
+        .about-card h3 {
+            margin-bottom: 12px;
+            color: #52664f;
+        }
+
+        .about-card p {
+            color: #666960;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        #departments {
+            background: #e6e4da;
+        }
+
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .department-card {
+            position: relative;
+            padding: 30px;
+            min-height: 230px;
+            border-radius: 15px;
+            background: #faf8f2;
+            border: 1px solid #d5d2c8;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+
+        .department-card::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            right: -30px;
+            top: -30px;
+            background: #83917d;
+            border-radius: 50%;
+            opacity: 0.12;
+            transition: 0.4s;
+        }
+
+        .department-card:hover {
+            transform: translateY(-6px);
+            border-color: #98a592;
+            box-shadow: 0 14px 30px rgba(77, 89, 74, 0.1);
+        }
+
+        .department-card:hover::before {
+            transform: scale(2.5);
+        }
+
+        .dept-code {
+            color: #72816d;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .department-card h3 {
+            position: relative;
+            font-size: 21px;
+            margin-bottom: 15px;
+            color: #333a31;
+        }
+
+        .department-card p {
+            position: relative;
+            color: #6e7169;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        #academics {
+            background: #faf9f5;
+        }
+
+        .academics-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .academic-box {
+            background: #f0eee7;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .academic-box h3 {
+            color: #52664f;
+            margin-bottom: 15px;
+        }
+
+        .academic-box p {
+            color: #666960;
+            line-height: 1.8;
+        }
+
+        #campus {
+            background: #dde1d9;
+        }
+
+        .campus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .campus-card {
+            text-align: center;
+            padding: 35px 20px;
+            background: #f6f4ed;
+            border-radius: 12px;
+            border: 1px solid #d0d5cc;
+            transition: 0.3s;
+        }
+
+        .campus-card:hover {
+            background: #71806c;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .campus-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .campus-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .campus-card p {
+            font-size: 13px;
+            color: #777b73;
+        }
+
+        .campus-card:hover p {
+            color: #eeeeea;
+        }
+
+        #contact {
+            background: #faf9f5;
+        }
+
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #696c65;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .contact-form {
+            padding: 30px;
+            border-radius: 15px;
+            background: #efede6;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #d1cec5;
+            border-radius: 6px;
+            outline: none;
+            font-family: inherit;
+            background: #fbfaf6;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #748470;
+        }
+
+        .contact-form button {
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #3d463b;
+            color: #d3d7d0;
+            text-align: center;
+            padding: 30px;
+            font-size: 13px;
+        }
+
+        footer span {
+            color: #ffffff;
+        }
+
+        @media (max-width: 950px) {
+            nav {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            .department-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .campus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 39px;
+            }
+
+            .department-grid,
+            .academics-container,
+            .campus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-circle">
+            DTU
+        </div>
+
+        <div class="logo-text">
+            <h2>Delhi Technological University</h2>
+            <p>ENGINEERING • INNOVATION • EXCELLENCE</p>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#departments">Departments</a>
+        <a href="#academics">Academics</a>
+        <a href="#campus">Campus Life</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<section id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                DELHI TECHNOLOGICAL UNIVERSITY
+            </div>
+
+            <h1>
+                Where Technology
+                Meets <span>Possibility.</span>
+            </h1>
+
+            <p>
+                Delhi Technological University is a premier
+                technological institution dedicated to excellence
+                in engineering, research, innovation and education.
+                The university provides an environment where
+                knowledge, creativity and technology come together.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#departments" class="btn btn-primary">
+                    Explore Departments →
+                </a>
+
+                <a href="#about" class="btn btn-secondary">
+                    Discover DTU
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <h3>DTU at a Glance</h3>
+
+            <div class="stat">
+                <h2>1941</h2>
+                <p>Legacy of technical education</p>
+            </div>
+
+            <div class="stat">
+                <h2>15+</h2>
+                <p>Academic departments</p>
+            </div>
+
+            <div class="stat">
+                <h2>Engineering</h2>
+                <p>Technology, research and innovation</p>
+            </div>
+
+            <div class="stat">
+                <h2>New Delhi</h2>
+                <p>Located in the capital of India</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about">
+
+    <p class="section-label">
+        About the University
+    </p>
+
+    <h2 class="section-title">
+        Building Engineers. Creating Innovators.
+    </h2>
+
+    <p class="section-description">
+        Delhi Technological University has a long history
+        of providing high-quality technical education.
+        The university promotes academic excellence,
+        practical learning, research, entrepreneurship
+        and technological innovation.
+    </p>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <h3>Our Vision</h3>
+
+            <p>
+                To become a world-class university through
+                education, innovation, research and development
+                in engineering and technology.
+            </p>
+
+        </div>
+
+        <div class="about-card">
+
+            <h3>Research & Innovation</h3>
+
+            <p>
+                DTU encourages students and researchers to work
+                on innovative technologies and interdisciplinary
+                projects aimed at solving real-world problems.
+            </p>
+
+        </div>
+
+        <div class="about-card">
+
+            <h3>Student Development</h3>
+
+            <p>
+                Technical societies, cultural clubs, sports,
+                competitions and entrepreneurship initiatives
+                provide students opportunities beyond academics.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="departments">
+
+    <p class="section-label">
+        Academic Departments
+    </p>
+
+    <h2 class="section-title">
+        Explore Our Departments
+    </h2>
+
+    <p class="section-description">
+        DTU consists of multiple departments offering
+        specialised education and research opportunities
+        across engineering, sciences, technology and management.
+    </p>
+
+    <div class="department-grid">
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 01
+            </p>
+
+            <h3>
+                Computer Science & Engineering
+            </h3>
+
+            <p>
+                Focuses on computer programming, algorithms,
+                artificial intelligence, machine learning,
+                databases, computer networks, cybersecurity
+                and software engineering.
+            </p>
+
+        </div>
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 02
+            </p>
+
+            <h3>
+                Information Technology
+            </h3>
+
+            <p>
+                Covers modern computing technologies including
+                information systems, networking, cloud computing,
+                web technologies, software development and
+                data-driven applications.
+            </p>
+
+        </div>
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 03
+            </p>
+
+            <h3>
+                Software Engineering
+            </h3>
+
+            <p>
+                Deals with systematic software development,
+                software architecture, testing, project
+                management and design of reliable,
+                large-scale software systems.
+            </p>
+
+        </div>
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 04
+            </p>
+
+            <h3>
+                Electronics & Communication Engineering
+            </h3>
+
+            <p>
+                Provides education in electronic circuits,
+                communication systems, signal processing,
+                embedded systems, VLSI and modern
+                communication technologies.
+            </p>
+
+        </div>
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 05
+            </p>
+
+            <h3>
+                Electrical Engineering
+            </h3>
+
+            <p>
+                Focuses on electrical machines, power systems,
+                control engineering, power electronics,
+                renewable energy and electrical technologies.
+            </p>
+
+        </div>
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 06
+            </p>
+
+            <h3>
+                Mechanical Engineering
+            </h3>
+
+            <p>
+                Covers manufacturing, machine design,
+                thermodynamics, robotics, fluid mechanics,
+                automobile technologies and industrial systems.
+            </p>
+
+        </div>
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 07
+            </p>
+
+            <h3>
+                Civil Engineering
+            </h3>
+
+            <p>
+                Provides knowledge in structural engineering,
+                transportation, environmental engineering,
+                construction technology and sustainable
+                infrastructure.
+            </p>
+
+        </div>
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 08
+            </p>
+
+            <h3>
+                Chemical Engineering
+            </h3>
+
+            <p>
+                Combines chemistry, mathematics and engineering
+                principles for chemical processes, industrial
+                systems, energy and material development.
+            </p>
+
+        </div>
+
+        <div class="department-card">
+
+            <p class="dept-code">
+                DEPARTMENT 09
+            </p>
+
+            <h3>
+                Applied Sciences
+            </h3>
+
+            <p>
+                Supports engineering education through
+                fundamental learning and research in physics,
+                chemistry, mathematics and other scientific
+                disciplines.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="academics">
+
+    <p class="section-label">
+        Academics
+    </p>
+
+    <h2 class="section-title">
+        Learn. Experiment. Innovate.
+    </h2>
+
+    <p class="section-description">
+        DTU provides programmes at undergraduate,
+        postgraduate and doctoral levels while encouraging
+        students to combine theoretical concepts with
+        practical engineering applications.
+    </p>
+
+    <div class="academics-container">
+
+        <div class="academic-box">
+
+            <h3>Undergraduate Programmes</h3>
+
+            <p>
+                Undergraduate programmes provide students
+                with strong engineering fundamentals,
+                laboratory experience, industrial exposure,
+                projects and opportunities to participate
+                in technical competitions.
+            </p>
+
+        </div>
+
+        <div class="academic-box">
+
+            <h3>Postgraduate & Research</h3>
+
+            <p>
+                Advanced programmes enable students to
+                specialise in emerging technologies and
+                contribute to research through laboratories,
+                projects and interdisciplinary collaboration.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="campus">
+
+    <p class="section-label">
+        Campus Life
+    </p>
+
+    <h2 class="section-title">
+        More Than Just Classrooms.
+    </h2>
+
+    <p class="section-description">
+        University life extends beyond academics.
+        Students participate in technical societies,
+        sports, cultural activities, innovation
+        challenges and entrepreneurship programmes.
+    </p>
+
+    <div class="campus-grid">
+
+        <div class="campus-card">
+
+            <div class="campus-icon">⚙️</div>
+
+            <h3>Tech Societies</h3>
+
+            <p>
+                Coding, robotics and engineering communities
+            </p>
+
+        </div>
+
+        <div class="campus-card">
+
+            <div class="campus-icon">🎭</div>
+
+            <h3>Cultural Clubs</h3>
+
+            <p>
+                Music, dance, theatre and creative activities
+            </p>
+
+        </div>
+
+        <div class="campus-card">
+
+            <div class="campus-icon">🏆</div>
+
+            <h3>Sports</h3>
+
+            <p>
+                Competitive and recreational sporting activities
+            </p>
+
+        </div>
+
+        <div class="campus-card">
+
+            <div class="campus-icon">💡</div>
+
+            <h3>Innovation</h3>
+
+            <p>
+                Projects, startups and entrepreneurship
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <p class="section-label">
+        Contact
+    </p>
+
+    <h2 class="section-title">
+        Connect With DTU
+    </h2>
+
+    <div class="contact-box">
+
+        <div class="contact-info">
+
+            <h3>
+                Delhi Technological University
+            </h3>
+
+            <p>
+                Shahbad Daulatpur,<br>
+                Main Bawana Road,<br>
+                Delhi – 110042
+            </p>
+
+            <p>
+                <strong>Website:</strong>
+                www.dtu.ac.in
+            </p>
+
+            <p>
+                For admission, academics and departmental
+                enquiries, students may contact the concerned
+                university office.
+            </p>
+
+        </div>
+
+        <div class="contact-form">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="email"
+                placeholder="Email Address"
+            >
+
+            <textarea
+                rows="5"
+                placeholder="Your Message"
+            ></textarea>
+
+            <button
+                onclick="sendMessage()"
+                class="btn btn-primary"
+            >
+                Send Message
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    © 2026 Delhi Technological University |
+    Academic Website Project
+
+    <br><br>
+
+    Designed for <span>Web Technology Practical</span>
+
+</footer>
+
+<script>
+
+    function sendMessage() {
+
+        alert(
+            "Thank you! Your message has been submitted."
+        );
+
+    }
+
+</script>
+
+</body>
+
+</html>
