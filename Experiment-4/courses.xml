@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="courses.xsl"?>
+
+<courseCatalogue>
+
+    <course>
+        <courseID>101</courseID>
+        <courseName>Data Structures and Algorithms</courseName>
+        <courseCode>CS201</courseCode>
+        <faculty>Dr. Amit Sharma</faculty>
+        <credits>4</credits>
+        <courseType>Core</courseType>
+    </course>
+
+    <course>
+        <courseID>102</courseID>
+        <courseName>Database Management Systems</courseName>
+        <courseCode>CS301</courseCode>
+        <faculty>Dr. Neha Gupta</faculty>
+        <credits>4</credits>
+        <courseType>Core</courseType>
+    </course>
+
+    <course>
+        <courseID>103</courseID>
+        <courseName>Web Technology</courseName>
+        <courseCode>CS305</courseCode>
+        <faculty>Dr. Rajesh Kumar</faculty>
+        <credits>3</credits>
+        <courseType>Core</courseType>
+    </course>
+
+    <course>
+        <courseID>104</courseID>
+        <courseName>Machine Learning</courseName>
+        <courseCode>CS401</courseCode>
+        <faculty>Dr. Priya Singh</faculty>
+        <credits>4</credits>
+        <courseType>Elective</courseType>
+    </course>
+
+    <course>
+        <courseID>105</courseID>
+        <courseName>Cloud Computing</courseName>
+        <courseCode>CS405</courseCode>
+        <faculty>Dr. Ankit Verma</faculty>
+        <credits>3</credits>
+        <courseType>Elective</courseType>
+    </course>
+
+</courseCatalogue>
